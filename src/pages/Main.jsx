@@ -113,6 +113,12 @@ class Main extends Component{
         )
     }
 
+    deSelect(){
+        this.setState({
+            selectI: []
+        })
+    }
+
     render() {
         const { error, isLoaded, items } = this.state;
         if (error) {
@@ -153,6 +159,7 @@ class Main extends Component{
                             {this.state.willShow ? (
                                 <>
                                     {this.returnList()}
+                                    <button className="btn btn-primary" onClick={() => this.deSelect()}>DeSelect All</button>
                                 </>
                             ) : null}
                         </span>
